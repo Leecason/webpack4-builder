@@ -1,0 +1,22 @@
+{
+  "name": "webpack4-builder",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leecason/webpack4-builder.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "leecason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leecason/webpack4-builder/issues"
+  },
+  "homepage": "https://github.com/Leecason/webpack4-builder#readme"
+}
