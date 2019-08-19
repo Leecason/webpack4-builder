@@ -4,7 +4,8 @@
   "description": "测试 builder 的模板项目",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "node ./index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

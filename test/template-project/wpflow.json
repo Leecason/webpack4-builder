@@ -1,0 +1,8 @@
+{
+  "builderOptions": {
+    "minifyHTML": true,
+    "minifyJS": true,
+    "inject": true,
+    "port": 8000
+  }
+}
