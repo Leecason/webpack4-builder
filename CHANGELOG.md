@@ -1,3 +1,14 @@
+## [0.0.2](https://github.com/Leecason/webpack4-builder/compare/v0.0.1...v0.0.2) (2019-08-19)
+
+
+### Features
+
+* ✨ dev server ([c82656d](https://github.com/Leecason/webpack4-builder/commit/c82656d))
+* ✨ optimize/minimize CSS assets ([3d5871e](https://github.com/Leecason/webpack4-builder/commit/3d5871e))
+* ✨ output jsPrefix, cssPrefix and htmlPrefix ([614f341](https://github.com/Leecason/webpack4-builder/commit/614f341))
+
+
+
 ## 0.0.1 (2019-07-16)
 
 
