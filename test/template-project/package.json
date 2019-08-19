@@ -1,0 +1,25 @@
+{
+  "name": "template-project",
+  "version": "0.0.1",
+  "description": "测试 builder 的模板项目",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "webpack": "^4.20.2"
+  },
+  "dependencies": {
+    "core-js": "3",
+    "lodash": "^4.17.15",
+    "vue": "^2.6.8",
+    "vue-router": "^3.1.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
