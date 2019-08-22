@@ -1,0 +1,347 @@
+$huge-btn-lineheight: 1.9rem;
+$large-btn-lineheight: 1.7rem;
+$normal-btn-lineheight: 1.5rem;
+$small-btn-lineheight: 1.2rem;
+$xsmall-btn-lineheight: .9rem;
+
+@mixin _ripple($color: $gray8) {
+  &::after {
+    background-color: $color;
+  }
+}
+
+$border-width: .05rem;
+
+button,
+.btn,
+input[type='button'],
+input[type='submit'] {
+  @include _ripple($primary-light-color);
+
+  background-color: $gray8;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: $gray2;
+  cursor: pointer;
+  font-size: $primary-size;
+  height: $normal-btn-lineheight + 2 * $border-width;
+  line-height: $normal-btn-lineheight;
+  min-width: $normal-btn-lineheight * 2;
+  overflow: hidden;
+  padding: 0 .5rem;
+  position: relative;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+  &:hover {
+    background-color: $primary-lighter-color;
+    color: $primary-color;
+  }
+
+  &:focus,
+  &:active {
+    color: $primary-dark-color;
+  }
+
+  // for ripple
+  &::after {
+    border-radius: .5rem;
+    content: '';
+    display: block;
+    height: 1rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .3s, opacity .3s;
+    visibility: hidden;
+    width: 1rem;
+  }
+
+  &:focus::after,
+  &:active::after {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(5);
+    transition: .3s;
+    visibility: visible;
+  }
+
+  .btn-icon {
+    align-items: center;
+    display: flex;
+    margin: 0 .4rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.btn-disabled,
+  &[disabled] {
+    background-color: $gray8;
+    color: transparentize($context-color, .8);
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $gray8;
+      color: transparentize($context-color, .8);
+    }
+
+    &:focus,
+    &:active {
+      background-color: $gray8;
+      color: transparentize($context-color, .8);
+    }
+
+    // 禁止的按钮不存在点击效果
+    &::after {
+      display: none;
+    }
+
+    &.btn-reverse {
+      background-color: transparent;
+      color: transparentize($white, .8);
+    }
+
+    &[class*=btn-text] {
+      background-color: transparent;
+    }
+
+    &[class*=btn-outline] {
+      border-color: $gray5;
+    }
+  }
+
+  &.btn-loading {
+    background-color: $gray8;
+    border-color: transparent;
+    color: $gray4;
+    cursor: default;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $gray8;
+      border-color: transparent;
+      color: $gray4;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &.btn-primary {
+      background-color: transparentize($primary-color, .2);
+      color: $white;
+    }
+  }
+
+  &[class*=btn-text] {
+    border: 0;
+    height: auto;
+    line-height: inherit;
+    min-width: 1rem;
+    padding: 0;
+  }
+}
+
+$btn-rounded-map: (huge: $huge-btn-lineheight,
+  large: $large-btn-lineheight,
+  small: $small-btn-lineheight,
+  xsmall: $xsmall-btn-lineheight);
+
+.btn-rounded {
+  border-radius: $normal-btn-lineheight / 2;
+
+  @each $size,
+  $value in $btn-rounded-map {
+    &.btn-#{ $size } {
+      border-radius: $value / 2;
+    }
+  }
+}
+
+.btn-block {
+  width: 100%;
+}
+
+// 不再嵌套进.btn, 1方面是为了减少层级，2是为了减少选择器数量
+.btn-huge {
+  height: $huge-btn-lineheight + 2 * $border-width;
+  line-height: $huge-btn-lineheight;
+  min-width: 4rem;
+  padding: 0 1rem;
+}
+
+.btn-large {
+  height: $large-btn-lineheight + 2 * $border-width;
+  line-height: $large-btn-lineheight;
+  min-width: $large-btn-lineheight * 2;
+  padding: 0 .8rem;
+}
+
+.btn-small {
+  border-radius: 2px;
+  font-size: $caption-size;
+  height: $small-btn-lineheight + 2 * $border-width;
+  line-height: $small-btn-lineheight;
+  min-width: $small-btn-lineheight * 2;
+  padding: 0 .4rem;
+}
+
+.btn-xsmall {
+  border-radius: 2px;
+  font-size: $caption-size;
+  height: $xsmall-btn-lineheight + 2 * $border-width;
+  line-height: $xsmall-btn-lineheight;
+  min-width: 1rem;
+  padding: 0 .4rem;
+}
+
+.btn-outline {
+  background-color: $white;
+  border-color: $gray5;
+  color: $gray2;
+
+  &:hover {
+    background-color: $white;
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:focus,
+  &:active {
+    background-color: $white;
+    border-color: $primary-dark-color;
+    color: $primary-dark-color;
+  }
+}
+
+.btn-link {
+  background-color: transparent;
+}
+
+.btn-text {
+  background-color: transparent;
+  line-height: $line-height;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:focus,
+  &:active {
+    background-color: transparent;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+// button color
+$btn-color-map: (primary: $primary-color,
+  error: $error-color);
+
+@each $status,
+$color in $btn-color-map {
+  $hover-color: darken($color, 4%);
+  $active-color: darken($color, 8%);
+
+  .btn-#{ $status } {
+    @include _ripple($active-color);
+
+    background-color: $color;
+    color: $white;
+
+    &:hover {
+      background-color: $hover-color;
+      color: $white;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $hover-color;
+      color: $white;
+    }
+  }
+
+  .btn-outline-#{ $status } {
+    background-color: $white;
+    border-color: $color;
+    color: $color;
+
+    &:hover {
+      background-color: $white;
+      border-color: $hover-color;
+      color: $hover-color;
+    }
+  }
+
+  .btn-link-#{ $status } {
+    @include _ripple(transparentize($color, .8));
+
+    background-color: transparent;
+    color: $color;
+
+    &:hover {
+      background-color: transparentize($color, .9);
+      color: $color;
+    }
+
+    &:focus,
+    &:active {
+      color: $color;
+    }
+  }
+
+  .btn-text-#{ $status } {
+    background-color: transparent;
+    color: $color;
+
+    &:hover {
+      background-color: transparent;
+      color: $hover-color;
+    }
+
+    &:focus,
+    &:active {
+      color: $active-color;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.btn-white {
+  @include _ripple(transparentize($black, .85));
+
+  background-color: $white;
+  color: $primary-color;
+
+  &:hover {
+    background-color: $gray8;
+  }
+}
+
+.btn-reverse {
+  @include _ripple($primary-color);
+
+  background-color: transparent;
+  color: $white;
+
+  &:hover {
+    background-color: transparentize($black, .85);
+    color: $white;
+  }
+
+  &:focus,
+  &:active {
+    color: $white;
+  }
+}

@@ -1,0 +1,96 @@
+// color
+$black: #000;
+$white: #fff;
+
+$gray1: #313c56;
+$gray2: #6b7885;
+$gray3: #95a4b3;
+$gray4: #b7c0ca;
+$gray5: #d4d7db;
+$gray6: #e9eaeb;
+$gray7: #f0eff4;
+$gray8: #f4f4f8;
+$gray9: #fbfcff;
+
+$sidebar-background-color: #544969;
+$mask-color: transparentize($gray1, .6);
+// alias
+$context-color: $gray1;
+$button-color: $gray2;
+$icon-color: $gray3;
+$light-icon-color: $gray4;
+$divider-color: $gray5;
+$light-divider-color: $gray6;
+$background-color: $gray7;
+$light-background-color: $gray8;
+$card-background-color: $gray9;
+
+$primary-color: #04bf78;
+$primary-dark-color: mix($primary-color, $black, 90%);
+$primary-darker-color: mix($primary-color, $black, 80%);
+$primary-light-color: mix($primary-color, $white, 30%);
+$primary-lighter-color: mix($primary-color, $white, 10%);
+$primary-lightest-color: mix($primary-color, $white, 5%);
+
+$success-color: #43bc08;
+$success-dark-color: mix($success-color, $black, 90%);
+$success-darker-color: mix($success-color, $black, 80%);
+$success-light-color: mix($success-color, $white, 30%);
+$success-lighter-color: mix($success-color, $white, 10%);
+$success-lightest-color: mix($success-color, $white, 5%);
+
+$error-color: #f0382a;
+$error-dark-color: mix($error-color, $black, 90%);
+$error-darker-color: mix($error-color, $black, 80%);
+$error-light-color: mix($error-color, $white, 30%);
+$error-lighter-color: mix($error-color, $white, 10%);
+$error-lightest-color: mix($error-color, $white, 5%);
+
+$warning-color: #f3b704;
+$warning-dark-color: mix($warning-color, $black, 90%);
+$warning-darker-color: mix($warning-color, $black, 80%);
+$warning-light-color: mix($warning-color, $white, 30%);
+$warning-lighter-color: mix($warning-color, $white, 10%);
+$warning-lightest-color: mix($warning-color, $white, 5%);
+
+
+// box shadow
+$_shadow-color1: transparentize($black, .86);
+$_shadow-color2: transparentize($black, .88);
+$_shadow-color3: transparentize($black, .8);
+$box-shadow1: 0 1px 1px 0 $_shadow-color1, 0 2px 1px -1px $_shadow-color2, 0 1px 3px 0 $_shadow-color3;
+$box-shadow2: 0 2px 2px 0 $_shadow-color1, 0 3px 1px -2px $_shadow-color2, 0 1px 5px 0 $_shadow-color3;
+$box-shadow3: 0 3px 4px 0 $_shadow-color1, 0 3px 3px -2px $_shadow-color2, 0 1px 8px 0 $_shadow-color3;
+$box-shadow4: 0 4px 5px 0 $_shadow-color1, 0 1px 0 0 $_shadow-color2, 0 2px 4px -1px $_shadow-color3;
+$box-shadow5: 0 6px 10px 0 $_shadow-color1, 0 1px 18px 0 $_shadow-color2, 0 3px 5px -1px $_shadow-color3;
+
+$card-shadow: $box-shadow1;
+$card-hover-shadow: $box-shadow2;
+$icon-float-shadow: $box-shadow3;
+$dialog-shadow: $box-shadow4;
+
+// typography
+$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Noto Sans", "Noto Sans CJK SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+$root-size: 20px;
+
+$h1-size: 24px;
+$h2-size: 22px;
+$h3-size: 20px;
+$h4-size: 18px;
+$h5-size: 16px;
+$h6-size: 14px;
+
+$title-size: 18px;
+$subtitle-size1: 16px;
+$subtitle-size2: 15px;
+$primary-size: 14px;
+$body-size1: 14px;
+$body-size2: 13px;
+$caption-size: 12px;
+
+$line-height: 1.42858em;
+$relaxed-line-height: 1.6em;
+
+$paragraph-space: 8px;
+$side-space: 20px;
+$grid-space: .6rem;
