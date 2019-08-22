@@ -2,10 +2,15 @@
 
 ## FEATURES
 
-- webpack4 + babel7 build
-- Support sass & vue
+- Webpack4 + Babel7 build
+- Support Vue
+- Support SASS
 - Support Multi-Page package
-- TODO: px2rem
+
+## Schedule
+- Code Splitting
+- px2rem
+- Support TypeScript
 
 ## CHANGELOG
 
