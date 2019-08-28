@@ -7,7 +7,7 @@
 - Support SASS
 - Support Multi-Page package
 
-## Schedule
+## ROADMAP
 - Code Splitting
 - px2rem
 - Support TypeScript
