@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const rimraf = require('rimraf');
 
@@ -6,6 +7,11 @@ function test () {
   const builder = require('../../lib/index');
 
   let prodConfig = builder.prodConfig;
+
+  prodConfig.resolveLoader.modules = [
+    'node_modules',
+    path.resolve(__dirname, '../../node_modules'),
+  ];
 
   // 清除 dist 目录
   rimraf('./dist', () => {
@@ -21,6 +27,5 @@ function test () {
     })
   })
 }
-
 
 test();
